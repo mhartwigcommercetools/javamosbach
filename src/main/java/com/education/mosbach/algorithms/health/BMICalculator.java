@@ -29,12 +29,17 @@ public class BMICalculator {
     }
 
     public double calculateBMI() {
-
-        System.out.println("Square the height " + (getHeight_in_m() * getHeight_in_m()));
-        System.out.println("weight " + getWeight_in_kg());
         return
                 getWeight_in_kg() / (getHeight_in_m() * getHeight_in_m());
     }
 
-
+    public String getRecommendation() {
+        double bmi = calculateBMI();
+        if (bmi <= 18.5)
+            return "Please go and eat a lot at McDonalds.";
+        if (bmi > 25)
+            return "Please join a sports club and do some sports.";
+        // otherwise
+            return "Your body is just perfect! Stay fit.";
+    }
 }

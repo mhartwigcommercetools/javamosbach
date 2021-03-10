@@ -11,6 +11,7 @@ public class DummyBmiCalculator {
         System.out.println("Your height: " + myBmiCalculator.getHeight_in_m() + " cm");
         System.out.println("Your weight: " + myBmiCalculator.getWeight_in_kg() + " kg");
         System.out.println("Your bmi: " + myBmiCalculator.calculateBMI());
+        System.out.println(myBmiCalculator.getRecommendation());
 
     }
 
