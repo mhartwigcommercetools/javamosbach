@@ -15,8 +15,17 @@ public class BubbleSort {
     }
 
     public void sortImproved(int[] A) {
-        for (int j = 0; j < A.length; j++)
-            for (int i = 0; i < (A.length-1); i++)
-                if (A[i] > A[i+1]) swap(A, i, i+1);
+
+        boolean hasSwapped = true;
+        for (int j = 0; j < (A.length-1); j++) {
+            if (hasSwapped) {
+                hasSwapped = false;
+                for (int i = 0; i < (A.length - 1 - j); i++)    // wir gehen nicht bis ans Ende
+                    if (A[i] > A[i + 1]) {
+                        swap(A, i, i + 1);
+                        hasSwapped = true;
+                    }
+            }
+        }
     }
 }

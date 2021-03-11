@@ -21,6 +21,24 @@ public class DummyBubbleSort {
             System.out.print(myNumbers[i]+ " ");
         System.out.println();
 
+
+        System.out.println("BubbleSort verbessert sortiert.");
+        System.out.println("vorher ");
+        int[] myNumbers2 = {3,8,2,6,7,8,1,12,0,-5,7};
+        for(int i= 0; i < myNumbers2.length; i++)
+            System.out.print(myNumbers2[i]+ " ");
+        System.out.println();
+
+        myBubbleSort.sortImproved(myNumbers2);
+
+        System.out.println("nachher ");
+        for(int i= 0; i < myNumbers2.length; i++)
+            System.out.print(myNumbers2[i]+ " ");
+        System.out.println();
+
+
+
+
     }
 
 }
