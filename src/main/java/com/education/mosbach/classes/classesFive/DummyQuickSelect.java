@@ -18,7 +18,7 @@ public class DummyQuickSelect {
 
         System.out.println("Der Drittplazierte ist " +
                 quickSelect.select(myNumbers, 3));
-        System.out.println("Der Fünftplazierte ist " +
+        System.out.println("Der Fuenftplazierte ist " +
                  quickSelect.select(myNumbers, 5));
 
 

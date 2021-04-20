@@ -12,7 +12,7 @@ public class DummySimpleSelect {
 
         System.out.println("Der Drittplazierte ist " +
                 simpleSelect.select(A, 3));
-        System.out.println("Der Fünftplazierte ist " +
+        System.out.println("Der Fuenftplazierte ist " +
                 simpleSelect.select(A, 5));
 
 

@@ -14,7 +14,7 @@ public class SortedLinkedListImpl implements LinkedList {
         Node temp = null;
         Node previous = null;
 
-        // if root == null dann einfach so einfügen
+        // if root == null dann einfach so einfuegen
         if (root == null) {
             Node node = new Node(i, null);
             root = node;
@@ -27,10 +27,10 @@ public class SortedLinkedListImpl implements LinkedList {
                 temp = temp.getNext();
 
 
-            // TODO für die gesamte Klasse, allein beenden
+            // TODO fuer die gesamte Klasse, allein beenden
             //
 
-            // einfügen, Zeiger sauber verbiegen
+            // einfuegen, Zeiger sauber verbiegen
 
         }
 

@@ -50,13 +50,13 @@ public class SortingCompetition {
         after = System.currentTimeMillis();
         long bubbleLarge = after - before;
 
-        System.out.println("BubbleSort brauchte  für " + limit1 + " " + bubbleSmall);
-        System.out.println("BubbleSort brauchte  für " + limit2 + " " + bubbleLarge);
+        System.out.println("BubbleSort brauchte  fuer " + limit1 + " " + bubbleSmall);
+        System.out.println("BubbleSort brauchte  fuer " + limit2 + " " + bubbleLarge);
 */
-        // BubbleSort brauchte  für 100000 22 767
-        // BubbleSort brauchte  für 200000 63 987
-        // QuickSort brauchte  für 100000 104
-        // QuickSort brauchte  für 200000 166
+        // BubbleSort brauchte  fuer 100000 22 767
+        // BubbleSort brauchte  fuer 200000 63 987
+        // QuickSort brauchte  fuer 100000 104
+        // QuickSort brauchte  fuer 200000 166
 
         before = System.currentTimeMillis();
         quickSort.sort(unsorted1);
@@ -68,8 +68,8 @@ public class SortingCompetition {
         after = System.currentTimeMillis();
         long quickLarge = after - before;
 
-        System.out.println("QuickSort brauchte  für " + limit1 + " " + quickSmall);
-        System.out.println("QuickSort brauchte  für " + limit2 + " " + quickLarge);
+        System.out.println("QuickSort brauchte  fuer " + limit1 + " " + quickSmall);
+        System.out.println("QuickSort brauchte  fuer " + limit2 + " " + quickLarge);
 
     }
 
