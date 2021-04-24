@@ -4,10 +4,12 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 /**
- * @author Michael Hartwig
- * name: Customer
  * Diese Klasse simuliert eine Bank, deren Kunden und Umbuchungen.
  * Es werden Threads verwendet.
+ *
+ * Please see the {@link https://www.baeldung.com/javadoc} for learning javaadocs.
+ * @author Michael Hartwig
+ *
  */
 public class DummyBankTransactionsPlay {
 

@@ -1,5 +1,7 @@
 package com.education.mosbach.algorithms.search;
 
+import java.math.BigInteger;
+
 public class BinarySearch {
 
     public boolean search(int[] A, int start, int end, int e) {
@@ -10,8 +12,12 @@ public class BinarySearch {
         if (start == end) return (A[start] == e);
 
         // Laut ungarischem Studenten buggy
-        // int pivot = (start + end) / 2;
-        int pivot = start + ((end - start) / 2);
+        // wrong: int pivot = (start + end) / 2;
+        // correct: int pivot = start + ((end - start) / 2);
+        // oder über BigInteger
+        BigInteger startBG = new BigInteger("" + start);
+        BigInteger endBG = new BigInteger("" + end);
+        int pivot = ((startBG.add(endBG)).divide(BigInteger.TWO)).intValue();
 
         if (e == A[pivot]) return true;
         if (e < A[pivot])
