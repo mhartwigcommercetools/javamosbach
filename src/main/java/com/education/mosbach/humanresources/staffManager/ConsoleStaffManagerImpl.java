@@ -20,4 +20,10 @@ public class ConsoleStaffManagerImpl implements StaffManager {
     public void storeAllStaff(List<Staff> myStaffContainer) {
         myStaffContainer.forEach(System.out::println);
     }
+
+    // TODO
+    @Override
+    public List<Staff> readStaff() {
+        return null;
+    }
 }

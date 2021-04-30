@@ -94,4 +94,21 @@ public class StaffImpl implements Staff {
                 .length();
     }
 
+    @Override
+    public int compareTo(Object o) {
+
+        // if o null return größer
+        if (o == null) return 1;
+
+        // if o andere Klasse return größer
+        if (!(o instanceof Staff)) return 1;
+
+        // if other staff
+        Staff otherStaff = (Staff) o;
+         if (getName().compareToIgnoreCase(otherStaff.getName()) != 0)
+            return getName().compareToIgnoreCase(otherStaff.getName());
+
+        return
+                getFirstName().compareToIgnoreCase(otherStaff.getFirstName());
+    }
 }

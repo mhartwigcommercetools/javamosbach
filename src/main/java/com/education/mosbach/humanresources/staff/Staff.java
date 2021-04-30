@@ -2,7 +2,7 @@ package com.education.mosbach.humanresources.staff;
 
 import java.util.Date;
 
-public interface Staff {
+public interface Staff extends Comparable {
 
     String getName();
     void setName(String name);
