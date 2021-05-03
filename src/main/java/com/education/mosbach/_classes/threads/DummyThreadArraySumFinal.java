@@ -12,47 +12,42 @@ public class DummyThreadArraySumFinal {
         for (int i = 0; i < randomNumbers.length; i++) {
             int temp = random.nextInt(100);
             randomNumbers[i] = temp;
-            // System.out.println("Zahl " + i + " " + temp);
         };
 
-        // 3 Threads berechnen die Summe
-        // TODO 3 hardcodiert, durch Anzahl Variable ersetzen
-        //
-        long[] sums = new long[3];
-        for (int i = 0; i < 3; i++)
+        // n Threads berechnen die Summe
+        final int noOfThreads = 3;
+        long[] sums = new long[noOfThreads];
+        for (int i = 0; i < noOfThreads; i++)
             sums[i] = 0;
         long finalSum = 0;
-        Thread[] counterThreads = new Thread[3];
+        Thread[] counterThreads = new Thread[noOfThreads];
 
         final long currentTimeMillisStartThreads = System.currentTimeMillis();
-        for (int noOfThread = 0; noOfThread < 3; noOfThread++) {
-            final int finalNoOfThread = noOfThread;
+        for (int j = 0; j < noOfThreads; j++) {
+            final int finalNoOfThread = j;
             Thread t = new Thread(() -> {
-                for (int i = finalNoOfThread * (limit / 3); i < (finalNoOfThread + 1) * (limit / 3); i++)
+                for (int i = finalNoOfThread * (limit / noOfThreads); i < (finalNoOfThread + 1) * (limit / noOfThreads); i++)
                     sums[finalNoOfThread] += randomNumbers[i];
-                if (finalNoOfThread == 2)
+                if (finalNoOfThread == noOfThreads - 1)
                     sums[finalNoOfThread] += randomNumbers[limit - 1];
-                // System.out.println("sum " + sums[finalNoOfThread]);
-                // finalSum += sums[finalNoOfThread]; gefaehrlich, siehe Unterricht morgen
             });
             counterThreads[finalNoOfThread] = t;
             t.start();
         }
 
-        // Nicht empfohlen, aber geht. Wir warten auf die Threads.
-
+        // Nicht empfohlen, siehe SEIV02, aber geht. Wir warten auf die Threads.
         try {
-            counterThreads[0].join();
-            counterThreads[1].join();
-            counterThreads[2].join();
+            for (int j = 0; j < noOfThreads; j++)
+                counterThreads[j].join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-
-        long sumViaThreads = sums[0] + sums[1] + sums[2];
+        long sumViaThreads = 0;
+        for (int j = 0; j < noOfThreads; j++)
+            sumViaThreads += sums[j];
         final long currentTimeMillisEndThreads = System.currentTimeMillis();
-        System.out.println("Summe via Threads " + sumViaThreads);
+        System.out.println("Summe fuer " + noOfThreads + " Threads " + sumViaThreads);
         System.out.println("Zeitverbrauch " + (currentTimeMillisEndThreads - currentTimeMillisStartThreads));
 
 
