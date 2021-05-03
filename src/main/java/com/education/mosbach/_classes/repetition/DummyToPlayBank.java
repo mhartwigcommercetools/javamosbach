@@ -37,5 +37,12 @@ public class DummyToPlayBank {
         bank1.sort2();
         System.out.println(bank1);
 
+        System.out.println("Customer mit der ID 5679 ist nach linearer Suche " +
+                bank1.findCustomerLinear(5679)
+        );
+        System.out.println("Customer mit der ID 5679 ist nach binärer Suche " +
+                bank1.findCustomerLinear(5679)
+        );
+
     }
 }

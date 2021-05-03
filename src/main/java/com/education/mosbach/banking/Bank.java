@@ -3,6 +3,7 @@ package com.education.mosbach.banking;
 import com.education.mosbach.humanresources.staff.Staff;
 import org.checkerframework.checker.units.qual.A;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -84,6 +85,39 @@ public class Bank {
                 .thenComparing(Customer::getFirstName)
         );
     }
+
+    public void sortById() {
+        customers.sort(Comparator
+                .comparing(Customer::getCustomerID)
+        );
+    }
+
+    public Customer findCustomerLinear(int customerID) {
+            for (Customer c : customers)
+                if (c.getCustomerID() == customerID)
+                    return c;
+            return null;
+    }
+
+    public Customer search(int start, int end, int customerID) {
+
+        if (start == end) return customers.get(start);
+        int pivot = start + ((end - start) / 2);
+
+        if (customerID == customers.get(pivot).getCustomerID())
+            return customers.get(pivot);
+        if (customerID < customers.get(pivot).getCustomerID())
+            return search(start, pivot-1, customerID);
+        else
+            return search(pivot+1, end, customerID);
+    }
+
+    public Customer findCustomerBinary(int customerID) {
+        sortById();
+        return
+                search(0, customers.size(), customerID);
+    }
+
 
     @Override
     public String toString() {
