@@ -1,6 +1,6 @@
 package com.education.mosbach.banking;
 
-public class Account {
+public class Account implements Comparable {
 
     private int customerID;
     private String iban;
@@ -55,5 +55,13 @@ public class Account {
             System.out.println("Buchung wurde nicht ausgeführt!");
             return false;
         }
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Account otheraccount = (Account) o;
+        if (getBalance() > otheraccount.getBalance()) return 1;
+        if (getBalance() == otheraccount.getBalance()) return 0;
+        return -1;
     }
 }

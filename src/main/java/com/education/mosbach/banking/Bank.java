@@ -8,15 +8,30 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class Bank {
+public class Bank implements AccountDetailsFetcher {
 
     private String name;
     private String ort;
     private List<Customer> customers = new ArrayList<>();
+    private List<Account> accounts = new ArrayList<>();
+    private List<Integer> balances = new ArrayList<>();
+    private CloudDBBankingManagerImpl cloudDBBankingManager =
+                CloudDBBankingManagerImpl.getCloudDBBankingManagerImpl();
 
     public Bank(String name, String ort) {
         this.name = name;
         this.ort = ort;
+        Thread t = new Thread(() -> {
+            for (int i = 0; i < 20; i++) {
+                try {
+                    cloudDBBankingManager.backupData();
+                    Thread.sleep(30);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        t.start();
     }
 
     public void addCustomer(Customer customer) {
@@ -118,6 +133,19 @@ public class Bank {
                 search(0, customers.size(), customerID);
     }
 
+    @Override
+    public boolean equals(Object o){
+        if(o==null) return false;
+        if(!(o instanceof Bank)) return false;
+        return
+                this.getName().equalsIgnoreCase(((Bank) o).getName());
+    }
+
+    @Override
+    public int hashCode(){
+        return
+                getName().length();
+    }
 
     @Override
     public String toString() {
@@ -126,5 +154,38 @@ public class Bank {
             sb.append(c.getLastName() + " " + c.getFirstName() + "\n");
         return
                 sb.toString();
+    }
+
+    public void addAccounts(Account a) {
+        accounts.add(a);
+    }
+
+    public List createSnapshot() {
+        balances.clear();
+        for (Account account : accounts)
+            balances.add(account.getBalance());
+        return
+                balances;
+    }
+
+    public BigInteger getBankBalance() {
+        BigInteger sumOfBalances = BigInteger.ZERO;
+        for (Integer balance : balances)
+            sumOfBalances = sumOfBalances.add(
+                    new BigInteger("" + balance)
+            );
+        return
+                sumOfBalances;
+    }
+
+    @Override
+    public List<Account> fetchMyAccounts(int customerID) throws NoAccountsExistException {
+        List<Account> myAccounts = new ArrayList<>();
+        for (Account account : accounts)
+            if (account.getCustomerID() == customerID)
+                myAccounts.add(account);
+        if (myAccounts.isEmpty()) throw new NoAccountsExistException();
+        return
+                myAccounts;
     }
 }
