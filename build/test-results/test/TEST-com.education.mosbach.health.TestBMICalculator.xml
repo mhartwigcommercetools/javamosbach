@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.education.mosbach.health.TestBMICalculator" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-04-04T09:08:33" hostname="ct-00451" time="0.006">
+  <properties/>
+  <testcase name="testCalculateBMIRecommendation(90                 ,   182                     ,   Please do more sports.) [0]" classname="com.education.mosbach.health.TestBMICalculator" time="0.002"/>
+  <testcase name="testCalculateBMIRecommendation(140                ,   200                     ,   Please do more sports.) [1]" classname="com.education.mosbach.health.TestBMICalculator" time="0.001"/>
+  <testcase name="testCalculateBMIRecommendation(70                 ,   193                     ,   Your BMI is perfect.) [2]" classname="com.education.mosbach.health.TestBMICalculator" time="0.0"/>
+  <testcase name="testCalculateBMIRecommendation(89                 ,   185                     ,   Please do more sports.) [3]" classname="com.education.mosbach.health.TestBMICalculator" time="0.0"/>
+  <testcase name="testCalculateBMIRecommendation(56                 ,   180                     ,   Please eat more hamburgers.) [4]" classname="com.education.mosbach.health.TestBMICalculator" time="0.0"/>
+  <testcase name="testCalculateBMI(90                 ,   182                     ,   27) [0]" classname="com.education.mosbach.health.TestBMICalculator" time="0.0"/>
+  <testcase name="testCalculateBMI(140                ,   200                     ,   35) [1]" classname="com.education.mosbach.health.TestBMICalculator" time="0.0"/>
+  <testcase name="testCalculateBMI(70                 ,   193                     ,   18) [2]" classname="com.education.mosbach.health.TestBMICalculator" time="0.0"/>
+  <testcase name="testCalculateBMI(89                 ,   185                     ,   26) [3]" classname="com.education.mosbach.health.TestBMICalculator" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

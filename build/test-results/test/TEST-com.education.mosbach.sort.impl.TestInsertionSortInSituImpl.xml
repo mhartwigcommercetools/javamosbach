@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.education.mosbach.sort.impl.TestInsertionSortInSituImpl" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-04-04T09:08:33" hostname="ct-00451" time="0.007">
+  <properties/>
+  <testcase name="testSort(1                  ,   1) [0]" classname="com.education.mosbach.sort.impl.TestInsertionSortInSituImpl" time="0.003"/>
+  <testcase name="testSort(3-4                ,   3-4) [1]" classname="com.education.mosbach.sort.impl.TestInsertionSortInSituImpl" time="0.0"/>
+  <testcase name="testSort(4-3                ,   3-4) [2]" classname="com.education.mosbach.sort.impl.TestInsertionSortInSituImpl" time="0.001"/>
+  <testcase name="testSort(7-7-7-7-7-7        ,   7-7-7-7-7-7) [3]" classname="com.education.mosbach.sort.impl.TestInsertionSortInSituImpl" time="0.0"/>
+  <testcase name="testSort(7-7-7-7-4-7        ,   4-7-7-7-7-7) [4]" classname="com.education.mosbach.sort.impl.TestInsertionSortInSituImpl" time="0.0"/>
+  <testcase name="testSort(7-9-14-4-4-8       ,   4-4-7-8-9-14) [5]" classname="com.education.mosbach.sort.impl.TestInsertionSortInSituImpl" time="0.001"/>
+  <testcase name="testSort(21-20-19-18-17     ,   17-18-19-20-21) [6]" classname="com.education.mosbach.sort.impl.TestInsertionSortInSituImpl" time="0.0"/>
+  <testcase name="testSort_emptyList" classname="com.education.mosbach.sort.impl.TestInsertionSortInSituImpl" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
